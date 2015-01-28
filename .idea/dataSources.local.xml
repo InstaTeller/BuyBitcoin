@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails bitcoin_payment: development" uuid="2d206893-3e33-4ae0-b6ef-2766cb38c662">
+      <first-sync>true</first-sync>
+      <user-name>postgres</user-name>
+      <user-password>dfcbdfcbdfcb</user-password>
+    </data-source>
+    <data-source name="Rails bitcoin_payment: test" uuid="3a1b5c61-c457-454d-88c0-73fdc5c5a45e">
+      <first-sync>true</first-sync>
+      <user-name>postgres</user-name>
+      <user-password>dfcbdfcbdfcb</user-password>
+    </data-source>
+    <data-source name="Rails bitcoin_payment: production" uuid="c6e7243f-9041-4a52-88c4-3ec2a45e44be">
+      <first-sync>true</first-sync>
+      <user-name>postgres</user-name>
+      <user-password>dfcbdfcbdfcb</user-password>
+    </data-source>
+  </component>
+</project>

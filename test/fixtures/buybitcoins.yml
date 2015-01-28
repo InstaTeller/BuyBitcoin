@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  usd: 1
+  btc: 1
+  mail: MyString
+  phone: MyString
+
+two:
+  usd: 1
+  btc: 1
+  mail: MyString
+  phone: MyString

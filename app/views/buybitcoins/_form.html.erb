@@ -1,0 +1,210 @@
+<%= form_for(@buybitcoin) do |f| %>
+  <% if @buybitcoin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@buybitcoin.errors.count, "error") %> prohibited this buybitcoin from being saved:</h2>
+
+      <ul>
+      <% @buybitcoin.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Verify your phone number:</h4>
+          <p class="padding-top-20">
+            We will send you a PIN code to verify your phone
+          </p>
+
+          <div class="form-group">
+            <input type="text" id="phone" class="form-control">
+          </div>
+
+          <div class="clearfix">
+            <div class="pull-left">
+              <p>
+                Receive verification code by
+              </p>
+
+              <div class="form-group">
+
+                <label class="radio-inline">
+                  <input type="radio" checked name="inlineRadioOptions" id="inlineRadio1" value="option1"> Text (SMS)
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Voice call
+                </label>
+              </div>
+            </div>
+            <div class="pull-right">
+              <%= f.submit 'Deposit USD', class:'btn btn-primary btn-lg btn-block'%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="invoice-btn background-aliceblue">
+    <div class="head white-bg row">
+      <div class="top-nav notification-row pull-right">
+        <a href="#">Login</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-4 col-sm-4">
+        <div class="panel-heading padding-top-20 textalign-center">
+          <p>
+            InstaTeller.com
+          </p>
+          <p class="font-weight-500">
+            The instantly & easiest way to buy Bitcoins.
+          </p>
+
+          <div class="btn-row padding-top-100">
+            <div class="btn-group" data-toggle="buttons">
+              <a class="btn btn-primary active" href="#">
+                Buy BTC
+              </a>
+              <a class="btn btn-primary" href="#">
+                Withdraw history
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body padding-top-50">
+          <div class="row">
+            <div class="pull-left">
+              Buy Bitcoin
+            </div>
+            <div class="pull-right">
+              <p>
+                at market price $316.96
+              </p>
+              <p class="font-size-10 pull-right">
+                Updated 2 seconds ago
+              </p>
+            </div>
+          </div>
+          <div class="row alert alert-info fade in">
+            <div class="col-sm-10 col-sm-offset-1">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <label for="usd">
+                      <span class="pull-left">
+                        Amount
+                      </span>
+                      <span class="pull-right">
+                        MAX
+                      </span>
+                    </label>
+                    <%= f.text_field :usd, placeholder: 'USD', class:'form-control'%>
+                    <%= f.text_field :btc, placeholder: 'BTC', class:'form-control col-lg-12'%>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row padding-top-10">
+                <div class="col-sm-6">
+                  <p class="text-align-left">
+                    Balance:
+                  </p>
+                  <p class="text-align-left">
+                    $0 USD
+                  </p>
+                </div>
+                <div class="col-sm-6">
+                  <p class="font-size-10 font-color-red text-center">
+                    No enough balance, please select a payment method
+                  </p>
+                  <div class="btn-group pull-right">
+                    <a class="btn btn-default" href="" title="Bootstrap 3 themes generator">+ Add balance</a>
+                    <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="" title="Bootstrap 3 themes generator"><span class="caret"></span></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="padding-top-10 text-align-left form-group clearfix">
+                <p>
+                  Deposit to :
+                </p>
+                <%= f.text_field :deposit_to, value:'Bitcoin Wallet', class:'form-control col-lg-12' %>
+              </div>
+
+              <div class="padding-top-20 text-align-left">
+                <p>
+                  Contact me to :
+                </p>
+              </div>
+              <div class="padding-top-10 row form-group">
+                <div class="col-sm-12">
+                  <div class="field">
+                    <%= f.text_field :mail, placeholder: '@ Email address', class:'form-control col-lg-12' %>
+                  </div>
+                  <div class="field">
+                    <%= f.text_field :phone, placeholder: '# Phone number', class:'form-control col-lg-12' %>
+                  </div>
+                </div>
+              </div>
+
+              <div class="padding-top-10">
+                <p>
+                  Fee
+                </p>
+              </div>
+
+              <div class="padding-top-10">
+                <p>
+                  <a href="#">
+                    Promo code?
+                  </a>
+                </p>
+              </div>
+
+              <div class="padding-top-10">
+                <p>
+                  Total
+                </p>
+              </div>
+
+              <div class="actions clearfix">
+                <%#= f.submit 'Deposit USD', class:'btn btn-primary btn-lg btn-block'%>
+                <button type="button" id="deposit" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal">
+                  Deposit USD
+                </button>
+              </div>
+
+              <div class="padding-top-10">
+                <p>
+                  The payment information will be emailed to you automatically.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<script type="text/javascript">
+
+$('#buybitcoin_usd').keyup(function(){
+  $('#buybitcoin_btc').val($('#buybitcoin_usd').val()*0.9);
+});
+
+$('#buybitcoin_btc').keyup(function(){
+  $('#buybitcoin_usd').val($('#buybitcoin_btc').val()/9*10);
+});
+
+$('#deposit').click(function(){
+  $('#phone').val($('#buybitcoin_phone').val());
+});
+
+</script>

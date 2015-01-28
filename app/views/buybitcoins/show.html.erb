@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Usd:</strong>
+  <%= @buybitcoin.usd %>
+</p>
+
+<p>
+  <strong>Btc:</strong>
+  <%= @buybitcoin.btc %>
+</p>
+
+<p>
+  <strong>Mail:</strong>
+  <%= @buybitcoin.mail %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @buybitcoin.phone %>
+</p>
+
+<%= link_to 'Edit', edit_buybitcoin_path(@buybitcoin) %> |
+<%= link_to 'Back', buybitcoins_path %>
